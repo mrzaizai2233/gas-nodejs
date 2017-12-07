@@ -7,3 +7,6 @@ const order = mongoose.Schema({
     subtotal: Number,
     status: Number
 });
+
+
+module.exports = mongoose.model('Order',order);
