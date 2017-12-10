@@ -13,8 +13,8 @@ exports.order_create=function(req,res){
     order.code = req.body.code;
     order.create_at = req.body.create_at;
     order.user = req.body.user;
-    // order.grand_total = req.body.grand_total;
-    // order.subtotal = req.body.subtotal;
+    order.grand_total = req.body.grand_total;
+    order.subtotal = req.body.subtotal;
     order.status = req.body.status;
     var total=0;
     var items =[];
@@ -23,13 +23,11 @@ exports.order_create=function(req,res){
         order_detail.product = item.product;
         order_detail.qty =item.qty;
         order_detail.total = item.total;
-        total+= parseInt(order_detail.qty) * parseFloat(order_detail.total);
         order_detail.discout= item.discout;
         order_detail.note = item.note;
         items.push(order_detail);
     });
-     order.grand_total = total;
-    order.subtotal = total;
+
     order.save(function(err,order){
         items.forEach(function(item,index){
                 item.order = order._id;
@@ -37,4 +35,9 @@ exports.order_create=function(req,res){
         })
         
     })
+}
+exports.order_update=function(req,res){}
+exports.order_delete=function(req,res){}
+exports.order=function(){
+
 }
