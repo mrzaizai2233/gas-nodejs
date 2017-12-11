@@ -6,8 +6,9 @@ const order = Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     grand_total: Number,
     subtotal: Number,
-    status: Number
+    status: Number,
+    items: [{ type: Schema.Types.ObjectId, ref: 'OrderDetail' }]
 });
 
 
-module.exports = mongoose.model('Order',order);
+module.exports = mongoose.model('Order', order);
