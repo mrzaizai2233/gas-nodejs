@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const detail_orderSchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const detail_orderSchema = Schema({
     order: { type: Schema.Types.ObjectId, ref: 'Order' },
     product: { type: Schema.Types.ObjectId, ref: 'Product' },
     qty: Number,

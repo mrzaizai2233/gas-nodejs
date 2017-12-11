@@ -2,6 +2,8 @@ var home = require('../controllers/home');
 var categoryRouter = require('./categoryRouter');
 const productRouter = require('./productRouter')
 const userRouter = require('./userRouter')
+const orderRouter = require('./orderRouter')
+
 
 //you can include all your controllers
 
@@ -27,5 +29,7 @@ module.exports = function(app, passport) {
     app.use('/api', categoryRouter);
     app.use('/api', productRouter);
     app.use('/api', userRouter);
+    app.use('/api', orderRouter);
+    
 
 }
