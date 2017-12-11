@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "async": "latest",
+    "async": "^2.6.0",
     "basic-auth-connect": "latest",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.13.2",
