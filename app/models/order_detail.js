@@ -7,6 +7,7 @@ const detail_orderSchema = Schema({
     qty: Number,
     price: Number,
     discout: Number,
+    discout_total: Number,
     note: String
 })
 
