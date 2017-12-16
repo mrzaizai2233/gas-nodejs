@@ -6,8 +6,9 @@ const detail_orderSchema = Schema({
     product: { type: Schema.Types.ObjectId, ref: 'Product' },
     qty: Number,
     price: Number,
-    discout: Number,
-    discout_total: Number,
+    discout_fixed: Number,
+    discout_percent: Number,
+    status: { type: Number, default: 1 },
     note: String
 })
 

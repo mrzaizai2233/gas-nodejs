@@ -28,8 +28,6 @@ exports.order_create = function(req, res) {
     order.subtotal = req.body.subtotal;
     order.status = req.body.status;
 
-    console.log(order._id);
-
     var items = [];
     req.body.items.forEach(function(item, index) {
         items.push(new Promise(function(resovel, rej) {
@@ -37,9 +35,10 @@ exports.order_create = function(req, res) {
             order_detail.product = item.product;
             order_detail.qty = item.qty;
             order_detail.price = item.price;
-            order_detail.discout = item.discout;
-            order_detail.discout_total = item.discout_total;
+            order_detail.discout_fixed = item.discout_fixed;
+            order_detail.discout_percent = item.discout_percent;
             order_detail.note = item.note;
+            order_detail.status = item.status;
             order_detail.order = order._id;
             order_detail.save(function(err, res) {
                 resovel(res._id)
