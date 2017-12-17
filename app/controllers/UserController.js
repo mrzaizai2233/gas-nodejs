@@ -47,3 +47,11 @@ exports.user_delete = function(req, res) {
         res.send(data);
     })
 }
+exports.user_findbyname = function(req,res){
+    console.log(req.body)
+    User.findOne({name: new RegExp('^'+req.body.name+'$', "i")}, function(err, doc) {
+        console.log(doc);
+        res.send("")
+        //Do your action here..
+      });
+}

@@ -8,7 +8,9 @@ const orderRouter = require('./orderRouter')
 //you can include all your controllers
 
 module.exports = function(app, passport) {
-
+    // app.get('*', function(req, res) {
+    //     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    // });
     app.get('/login', home.login);
     app.get('/signup', home.signup);
 
