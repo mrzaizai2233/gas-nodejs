@@ -7,4 +7,6 @@ router.post('/order/update', OrderController.order_update)
 router.get('/order/delete/:id', OrderController.order_delete)
 router.get('/order/order/:id', OrderController.order)
 
+router.post('/order/changeStatus', OrderController.order_change_status)
+
 module.exports = router;

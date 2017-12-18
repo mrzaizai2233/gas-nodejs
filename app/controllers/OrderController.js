@@ -69,3 +69,14 @@ exports.order_delete = function(req, res) {
 exports.order = function() {
 
 }
+
+exports.order_change_status = function(req,res){
+    // console.log(req.body)
+    Order.findById(req.body._id,function(err,order){
+        // console.log(req.body._id);
+        order.status = !order.status;
+        order.save(function(err,data){
+            res.send('success')
+        })
+    })
+}
