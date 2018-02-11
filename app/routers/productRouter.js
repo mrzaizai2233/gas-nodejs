@@ -6,4 +6,5 @@ router.post('/product/create',productController.product_create)
 router.post('/product/update',productController.product_update)
 router.get('/product/delete/:id',productController.product_delete)
 router.get('/product/product/:id',productController.product)
+router.post('/product/change_status',productController.change_status)
 module.exports = router;
