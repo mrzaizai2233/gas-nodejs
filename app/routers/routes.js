@@ -1,13 +1,13 @@
 var home = require('../controllers/home');
 var categoryRouter = require('./categoryRouter');
 const productRouter = require('./productRouter')
-const userRouter = require('./userRouter')
+const customerRouter = require('./customerRouter')
 const orderRouter = require('./orderRouter')
 
 
 //you can include all your controllers
 
-module.exports = function(app, passport) {
+module.exports = function (app, passport) {
     // app.get('*', function(req, res) {
     //     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     // });
@@ -30,8 +30,8 @@ module.exports = function(app, passport) {
     }));
     app.use('/api', categoryRouter);
     app.use('/api', productRouter);
-    app.use('/api', userRouter);
+    app.use('/api', customerRouter);
     app.use('/api', orderRouter);
-    
+
 
 }
